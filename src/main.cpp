@@ -31,6 +31,12 @@ setup(void)
 
 }
 
+int
+is_odd( int x )
+{
+    return x%2!=0;
+}
+
 void
 loop(void)
 {
@@ -46,13 +52,13 @@ loop(void)
     {
         if( num > 0 )
         {
-            if( num%2 != 0 )
+            if( is_odd(num) )
             {
-                digitalWrite(INTLED,HIGH);
+                digitalWrite(INTLED,LOW);
             }
             else
             {
-                digitalWrite(INTLED,LOW);
+                digitalWrite(INTLED,HIGH);
             }
             --num;
         }
